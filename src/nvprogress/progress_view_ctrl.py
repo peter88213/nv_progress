@@ -40,8 +40,6 @@ class ProgressViewCtrl(SubController):
         lastCount = 0
         lastTotalCount = 0
         for wc in wcLog:
-            columns = []
-            nodeTags = ()
             countInt = int(wcLog[wc][0])
             countDiffInt = countInt - lastCount
             totalCountInt = int(wcLog[wc][1])
