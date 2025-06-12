@@ -10,17 +10,19 @@ from nvlib.gui.observer import Observer
 from nvprogress.nvprogress_locale import _
 from nvprogress.platform.platform_settings import KEYS
 from nvprogress.platform.platform_settings import PLATFORM
-from nvprogress.progress_view_ctrl import ProgressViewCtrl
+from datetime import date
+
+from nvlib.controller.sub_controller import SubController
 import tkinter as tk
 
 
-class ProgressView(tk.Toplevel, Observer, ProgressViewCtrl):
+class ProgressView(tk.Toplevel, Observer, SubController):
 
-    def __init__(self, model, view, controller, prefs):
+    def __init__(self, model, prefs):
         tk.Toplevel.__init__(self)
-        self.prefs = prefs
+        self._prefs = prefs
 
-        self.geometry(self.prefs['window_geometry'])
+        self.geometry(self._prefs['window_geometry'])
         self.lift()
         self.focus()
         self.protocol("WM_DELETE_WINDOW", self.on_quit)
@@ -35,9 +37,17 @@ class ProgressView(tk.Toplevel, Observer, ProgressViewCtrl):
             'totalWordCount',
             'totalWordCountDelta',
             'spacer',
-            )
-        self.tree = ttk.Treeview(self, selectmode='none', columns=columns)
-        scrollY = ttk.Scrollbar(self.tree, orient='vertical', command=self.tree.yview)
+        )
+        self.tree = ttk.Treeview(
+            self,
+            selectmode='none',
+            columns=columns,
+        )
+        scrollY = ttk.Scrollbar(
+            self.tree,
+            orient='vertical',
+            command=self.tree.yview,
+        )
         self.tree.configure(yscrollcommand=scrollY.set)
         scrollY.pack(side='right', fill='y')
         self.tree.pack(fill='both', expand=True)
@@ -47,37 +57,130 @@ class ProgressView(tk.Toplevel, Observer, ProgressViewCtrl):
         self.tree.heading('totalWordCount', text=_('With unused'))
         self.tree.heading('totalWordCountDelta', text=_('Daily'))
         self.tree.column('#0', width=0)
-        self.tree.column('date', anchor='center', width=self.prefs['date_width'], stretch=False)
-        self.tree.column('wordCount', anchor='center', width=self.prefs['wordcount_width'], stretch=False)
-        self.tree.column('wordCountDelta', anchor='center', width=self.prefs['wordcount_delta_width'], stretch=False)
-        self.tree.column('totalWordCount', anchor='center', width=self.prefs['totalcount_width'], stretch=False)
-        self.tree.column('totalWordCountDelta', anchor='center', width=self.prefs['totalcount_delta_width'], stretch=False)
+        self.tree.column(
+            'date',
+            anchor='center',
+            width=self._prefs['date_width'],
+            stretch=False,
+        )
+        self.tree.column(
+            'wordCount',
+            anchor='center',
+            width=self._prefs['wordcount_width'],
+            stretch=False,
+        )
+        self.tree.column(
+            'wordCountDelta',
+            anchor='center',
+            width=self._prefs['wordcount_delta_width'],
+            stretch=False,
+        )
+        self.tree.column(
+            'totalWordCount',
+            anchor='center',
+            width=self._prefs['totalcount_width'],
+            stretch=False,
+        )
+        self.tree.column(
+            'totalWordCountDelta',
+            anchor='center',
+            width=self._prefs['totalcount_delta_width'],
+            stretch=False,
+        )
 
         self.tree.tag_configure('positive', foreground='black')
         self.tree.tag_configure('negative', foreground='red')
 
         # "Close" button.
-        ttk.Button(self, text=_('Close'), command=self.on_quit).pack(side='right', padx=5, pady=5)
+        ttk.Button(
+            self,
+            text=_('Close'),
+            command=self.on_quit,
+        ).pack(side='right', padx=5, pady=5)
 
-        self.initialize_controller(model, view, controller, prefs)
+        self._mdl = model
+        self.isOpen = True
+        self._build_tree()
         self._mdl.add_observer(self)
 
     def on_quit(self, event=None):
         self._mdl.delete_observer(self)
-        self.prefs['window_geometry'] = self.winfo_geometry()
-        self.prefs['date_width'] = self.tree.column('date', 'width')
-        self.prefs['wordcount_width'] = self.tree.column('wordCount', 'width')
-        self.prefs['wordcount_delta_width'] = self.tree.column('wordCountDelta', 'width')
-        self.prefs['totalcount_width'] = self.tree.column('totalWordCount', 'width')
-        self.prefs['totalcount_delta_width'] = self.tree.column('totalWordCountDelta', 'width')
+        self._prefs['window_geometry'] = self.winfo_geometry()
+        self._prefs['date_width'] = self.tree.column(
+            'date', 'width')
+        self._prefs['wordcount_width'] = self.tree.column(
+            'wordCount', 'width')
+        self._prefs['wordcount_delta_width'] = self.tree.column(
+            'wordCountDelta', 'width')
+        self._prefs['totalcount_width'] = self.tree.column(
+            'totalWordCount', 'width')
+        self._prefs['totalcount_delta_width'] = self.tree.column(
+            'totalWordCountDelta', 'width')
         self.destroy()
         self.isOpen = False
 
     def refresh(self):
-        self.build_tree()
+        self._build_tree()
 
-    def reset_tree(self):
-        """Clear the displayed tree."""
+    def _reset_tree(self):
+        # Clear the displayed tree.
         for child in self.tree.get_children(''):
             self.tree.delete(child)
+
+    def _build_tree(self):
+        self._reset_tree()
+        wcLog = {}
+
+        # Copy the read-in word count log.
+        for wcDate in self._mdl.prjFile.wcLog:
+            sessionDate = date.fromisoformat(wcDate).strftime('%x')
+            wcLog[sessionDate] = self._mdl.prjFile.wcLog[wcDate]
+
+        # Add the word count determined when opening the project.
+        for wcDate in self._mdl.prjFile.wcLogUpdate:
+            sessionDate = date.fromisoformat(wcDate).strftime('%x')
+            wcLog[sessionDate] = self._mdl.prjFile.wcLogUpdate[wcDate]
+
+        # Add the actual word count.
+        newCountInt, newTotalCountInt = self._mdl.prjFile.count_words()
+        newCount = str(newCountInt)
+        newTotalCount = str(newTotalCountInt)
+        today = date.today().strftime('%x')
+        wcLog[today] = [newCount, newTotalCount]
+
+        lastCount = 0
+        lastTotalCount = 0
+        for wc in wcLog:
+            countInt = int(wcLog[wc][0])
+            countDiffInt = countInt - lastCount
+            totalCountInt = int(wcLog[wc][1])
+            totalCountDiffInt = totalCountInt - lastTotalCount
+            if countDiffInt == 0 and totalCountDiffInt == 0:
+                continue
+
+            if countDiffInt > 0:
+                nodeTags = ('positive')
+            else:
+                nodeTags = ('negative')
+            columns = [
+                wc,
+                str(wcLog[wc][0]),
+                str(countDiffInt),
+                str(wcLog[wc][1]),
+                str(totalCountDiffInt),
+            ]
+            lastCount = countInt
+            lastTotalCount = totalCountInt
+            # startIndex = 'end'
+            # chronological order
+            startIndex = '0'
+            # reverse order
+            self.tree.insert(
+                '',
+                startIndex,
+                iid=wc,
+                values=columns,
+                tags=nodeTags,
+                open=True,
+            )
 
