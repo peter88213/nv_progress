@@ -24,8 +24,8 @@ class ProgressService(SubController):
     )
     OPTIONS = {}
 
-    def __init__(self, model, view, controller):
-        super().initialize_controller(model, view, controller)
+    def __init__(self, model):
+        self._mdl = model
         self.progressView = None
 
         #--- Load configuration.
@@ -37,8 +37,8 @@ class ProgressService(SubController):
         self.iniFile = f'{configDir}/{self.INI_FILENAME}'
         self.configuration = self._mdl.nvService.new_configuration(
             settings=self.SETTINGS,
-            options=self.OPTIONS
-            )
+            options=self.OPTIONS,
+        )
         self.configuration.read(self.iniFile)
         self._prefs = {}
         self._prefs.update(self.configuration.settings)

@@ -57,7 +57,7 @@ class Plugin(PluginBase):
         Extends the superclass method.
         """
         super().install(model, view, controller)
-        self.progressService = ProgressService(model, view, controller)
+        self.progressService = ProgressService(model)
 
         # Add an entry to the Help menu.
         self._ui.helpMenu.add_command(label=_('Progress viewer Online help'), command=self.open_help)
