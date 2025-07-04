@@ -50,14 +50,14 @@ class Plugin(PluginBase):
         """Add a submenu to the 'Tools' menu.
         
         Positional arguments:
-            model -- reference to the main model instance of the application.
-            view -- reference to the main view instance of the application.
-            controller -- reference to the main controller instance of the application.
+            model -- reference to the novelibre main model instance.
+            view -- reference to the novelibre main view instance.
+            controller -- reference to the novelibre main controller instance.
 
         Extends the superclass method.
         """
         super().install(model, view, controller)
-        self.progressService = ProgressService(model, view, controller)
+        self.progressService = ProgressService(model)
 
         # Add an entry to the Help menu.
         self._ui.helpMenu.add_command(label=_('Progress viewer Online help'), command=self.open_help)

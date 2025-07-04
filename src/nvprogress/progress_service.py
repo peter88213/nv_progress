@@ -24,8 +24,8 @@ class ProgressService(SubController):
     )
     OPTIONS = {}
 
-    def __init__(self, model, view, controller):
-        super().initialize_controller(model, view, controller)
+    def __init__(self, model):
+        self._mdl = model
         self.progressView = None
 
         #--- Load configuration.
@@ -37,12 +37,12 @@ class ProgressService(SubController):
         self.iniFile = f'{configDir}/{self.INI_FILENAME}'
         self.configuration = self._mdl.nvService.new_configuration(
             settings=self.SETTINGS,
-            options=self.OPTIONS
-            )
+            options=self.OPTIONS,
+        )
         self.configuration.read(self.iniFile)
-        self.prefs = {}
-        self.prefs.update(self.configuration.settings)
-        self.prefs.update(self.configuration.options)
+        self._prefs = {}
+        self._prefs.update(self.configuration.settings)
+        self._prefs.update(self.configuration.options)
 
     def on_close(self):
         """Close the window.
@@ -61,11 +61,11 @@ class ProgressService(SubController):
                 self.progressView.on_quit()
 
         #--- Save configuration
-        for keyword in self.prefs:
+        for keyword in self._prefs:
             if keyword in self.configuration.options:
-                self.configuration.options[keyword] = self.prefs[keyword]
+                self.configuration.options[keyword] = self._prefs[keyword]
             elif keyword in self.configuration.settings:
-                self.configuration.settings[keyword] = self.prefs[keyword]
+                self.configuration.settings[keyword] = self._prefs[keyword]
         self.configuration.write(self.iniFile)
 
     def start_viewer(self, windowTitle):
@@ -77,7 +77,12 @@ class ProgressService(SubController):
                 self.progressView.focus()
                 return
 
-        self.progressView = ProgressView(self._mdl, self._ui, self._ctrl, self.prefs)
-        self.progressView.title(f'{self._mdl.novel.title} - {windowTitle}')
+        self.progressView = ProgressView(
+            self._mdl,
+            self._prefs,
+        )
+        self.progressView.title(
+            f'{self._mdl.novel.title} - {windowTitle}'
+        )
         set_icon(self.progressView, icon='wLogo32', default=False)
 
