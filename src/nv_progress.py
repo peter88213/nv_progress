@@ -2,7 +2,7 @@
 
 Requires Python 3.6+
 Copyright (c) 2024 Peter Triesberger
-For further information see https://github.com/peter88213/noveltree_progress
+For further information see https://github.com/peter88213/nv_progress
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 This program is free software: you can redistribute it and/or modify
@@ -39,9 +39,9 @@ OPTIONS = {}
 class Plugin:
     """noveltree daily progress log viewer plugin class."""
     VERSION = '@release'
-    NOVELTREE_API = '1.0'
+    NOVELTREE_API = '1.8'
     DESCRIPTION = 'A daily progress log viewer'
-    URL = 'https://peter88213.github.io/noveltree_progress'
+    URL = 'https://github.com/peter88213/nv_progress'
 
     def disable_menu(self):
         """Disable menu entries when no project is open."""

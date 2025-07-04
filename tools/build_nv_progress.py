@@ -7,7 +7,7 @@ The novxlib project (see https://github.com/peter88213/novxlib)
 must be located on the same directory level as the nv_progress project. 
 
 Copyright (c) 2024 Peter Triesberger
-For further information see https://github.com/peter88213/noveltree_progress
+For further information see https://github.com/peter88213/nv_progress
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import os
@@ -22,7 +22,8 @@ TARGET_FILE = f'{BUILD}nv_progress.py'
 
 
 def main():
-    inliner.run(SOURCE_FILE, TARGET_FILE, 'nvprogresslib', '../../noveltree_progress/src/')
+    os.makedirs(BUILD, exist_ok=True)
+    inliner.run(SOURCE_FILE, TARGET_FILE, 'nvprogresslib', '../../nv_progress/src/')
     inliner.run(TARGET_FILE, TARGET_FILE, 'noveltreelib', '../../noveltree/src/')
     inliner.run(TARGET_FILE, TARGET_FILE, 'novxlib', '../../novxlib/src/')
     print('Done.')
