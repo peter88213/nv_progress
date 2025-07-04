@@ -1,4 +1,4 @@
-[![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v3.0.1.zip)
+[![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v3.1.0.zip)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
 [![News](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions/1)
 [![Online help](docs/img/help-button.png)](docs/usage.md)
@@ -22,9 +22,9 @@ The [novelibre](https://github.com/peter88213/novelibre/) Python program helps a
 
 ## Download and install
 
-[Download the latest release (version 3.0.1)](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v3.0.1.zip)
+[Download the latest release (version 3.1.0)](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v3.1.0.zip)
 
-- Extract the "nv_progress_v3.0.1" folder from the downloaded zipfile "nv_progress_v3.0.1.zip".
+- Extract the "nv_progress_v3.1.0" folder from the downloaded zipfile "nv_progress_v3.1.0.zip".
 - Move into this new folder and launch **setup.pyw**. This installs the plugin for the local user.
 
 ---

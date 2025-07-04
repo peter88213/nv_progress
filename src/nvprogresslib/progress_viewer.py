@@ -67,17 +67,19 @@ class ProgressViewer(tk.Toplevel):
 
         # Copy the read-in word count log.
         for wcDate in self._mdl.prjFile.wcLog:
-            wcLog[wcDate] = self._mdl.prjFile.wcLog[wcDate]
+            sessionDate = date.fromisoformat(wcDate).strftime('%x')
+            wcLog[sessionDate] = self._mdl.prjFile.wcLog[wcDate]
 
         # Add the word count determined when opening the project.
         for wcDate in self._mdl.prjFile.wcLogUpdate:
-            wcLog[wcDate] = self._mdl.prjFile.wcLogUpdate[wcDate]
+            sessionDate = date.fromisoformat(wcDate).strftime('%x')
+            wcLog[sessionDate] = self._mdl.prjFile.wcLogUpdate[wcDate]
 
         # Add the actual word count.
         newCountInt, newTotalCountInt = self._mdl.prjFile.count_words()
         newCount = str(newCountInt)
         newTotalCount = str(newTotalCountInt)
-        today = date.today().isoformat()
+        today = date.today().strftime('%x')
         wcLog[today] = [newCount, newTotalCount]
 
         lastCount = 0

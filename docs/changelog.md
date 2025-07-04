@@ -4,6 +4,13 @@
 
 ## Changelog
 
+### Version 3.1.0
+
+- Localize the dates.
+
+Based on novxlib v3.5.3
+Compatibility: novelibre v3.0 API
+
 ### Version 3.0.1
 
 - On Windows, do not assign the Ctrl Q shortcut for closing.
