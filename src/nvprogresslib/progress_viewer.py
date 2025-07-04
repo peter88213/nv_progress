@@ -5,10 +5,10 @@ For further information see https://github.com/peter88213/nv_progress
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 from datetime import date
-import platform
 from tkinter import ttk
 
 from nvprogresslib.nvprogress_globals import _
+from nvprogresslib.nvprogress_globals import PLATFORM
 import tkinter as tk
 
 
@@ -24,7 +24,7 @@ class ProgressViewer(tk.Toplevel):
         self.lift()
         self.focus()
         self.protocol("WM_DELETE_WINDOW", self.on_quit)
-        if platform.system() != 'Windows':
+        if PLATFORM != 'win':
             self.bind(self._KEY_QUIT_PROGRAM[0], self.on_quit)
 
         #--- Tree for log view.

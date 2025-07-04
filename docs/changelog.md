@@ -4,6 +4,13 @@
 
 ## Changelog
 
+### Version 4.2.5
+
+- Refactor platform detection.
+
+Compatibility: novelibre 4.3 API
+Based on novxlib 4.6.4
+
 ### Version 4.2.4
 
 - Translate accelerators.
