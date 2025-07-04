@@ -8,8 +8,8 @@ from datetime import date
 from tkinter import ttk
 
 from nvprogresslib.nvprogress_globals import _
-from nvprogresslib.platform_settings import PLATFORM
-from nvprogresslib.platform_settings import KEYS
+from nvprogresslib.platform.platform_settings import PLATFORM
+from nvprogresslib.platform.platform_settings import KEYS
 import tkinter as tk
 
 

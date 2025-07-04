@@ -8,6 +8,7 @@ import os
 import sys
 import gettext
 import locale
+import webbrowser
 
 # Initialize localization.
 LOCALE_PATH = f'{os.path.dirname(sys.argv[0])}/locale/'
@@ -24,3 +25,9 @@ except:
     def _(message):
         return message
 
+HELP_URL = 'https://github.com/peter88213/nv_progress/tree/main/docs/nv_progress'
+
+
+def open_help(event=None):
+    """Show the online help page specified by HELP_URL."""
+    webbrowser.open(HELP_URL)
