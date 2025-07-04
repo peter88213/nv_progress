@@ -17,9 +17,9 @@ GNU General Public License for more details.
 """
 from pathlib import Path
 
+from nvprogresslib.nvprogress_globals import _
 from novxlib.ui.set_icon_tk import set_icon
 from nvlib.plugin.plugin_base import PluginBase
-from nvprogresslib.nvprogress_globals import _
 from nvprogresslib.progress_viewer import ProgressViewer
 
 APPLICATION = _('Daily progress log')
