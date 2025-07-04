@@ -52,7 +52,7 @@ class Plugin(PluginBase):
         Positional arguments:
             model -- reference to the novelibre main model instance.
             view -- reference to the novelibre main view instance.
-            controller -- reference to the novelibre main controller instance.
+            controller -- reference to the novelibre main controller.
 
         Extends the superclass method.
         """
@@ -60,10 +60,16 @@ class Plugin(PluginBase):
         self.progressService = ProgressService(model)
 
         # Add an entry to the Help menu.
-        self._ui.helpMenu.add_command(label=_('Progress viewer Online help'), command=self.open_help)
+        self._ui.helpMenu.add_command(
+            label=_('Progress viewer Online help'),
+            command=self.open_help,
+        )
 
         # Create an entry in the Tools menu.
-        self._ui.toolsMenu.add_command(label=self.FEATURE, command=self.start_viewer)
+        self._ui.toolsMenu.add_command(
+            label=self.FEATURE,
+            command=self.start_viewer,
+        )
         self._ui.toolsMenu.entryconfig(self.FEATURE, state='disabled')
 
     def on_close(self):
