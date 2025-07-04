@@ -1,10 +1,6 @@
 """Build the nv_progress novelibre plugin package.
         
-In order to distribute a single script without dependencies, 
-this script "inlines" all modules imported from the novxlib package.
-
-The novxlib project (see see https://github.com/peter88213/novxlib)
-must be located on the same directory level as the nv_progress project. 
+Note: VERSION must be updated manually before starting this script.
 
 Copyright (c) 2024 Peter Triesberger
 For further information see https://github.com/peter88213/nv_progress
@@ -16,7 +12,7 @@ import sys
 sys.path.insert(0, f'{os.getcwd()}/../../novelibre/tools')
 from package_builder import PackageBuilder
 
-VERSION = '4.2.3'
+VERSION = '4.2.4'
 
 
 class PluginBuilder(PackageBuilder):

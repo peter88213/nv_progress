@@ -13,7 +13,7 @@ import tkinter as tk
 
 
 class ProgressViewer(tk.Toplevel):
-    _KEY_QUIT_PROGRAM = ('<Control-q>', 'Ctrl-Q')
+    _KEY_QUIT_PROGRAM = ('<Control-q>', f'{_("Ctrl")}-Q')
 
     def __init__(self, plugin, model):
         self._plugin = plugin
