@@ -46,6 +46,12 @@ class ProgressTk(MainTk):
         super().enable_menu()
         self.plugin.enable_menu()
 
+    def register_view(self, view):
+        pass
+
+    def unregister_view(self, view):
+        pass
+
 
 if __name__ == '__main__':
     ui = ProgressTk()

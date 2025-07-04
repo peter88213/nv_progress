@@ -69,10 +69,9 @@ class Plugin(PluginBase):
         Optional arguments:
             prefs -- deprecated. Please use controller.get_preferences() instead.
         
-        Overrides the superclass method.
+        Extends the superclass method.
         """
-        self._mdl = model
-        self._ui = view
+        super().install(model, view, controller)
         self._progress_viewer = None
 
         #--- Load configuration.
@@ -129,10 +128,10 @@ class Plugin(PluginBase):
                     self._progress_viewer.state('normal')
                 self._progress_viewer.lift()
                 self._progress_viewer.focus()
-                self._progress_viewer.build_tree()
+                self._progress_viewer.refresh()
                 return
 
-        self._progress_viewer = ProgressViewer(self, self._mdl)
+        self._progress_viewer = ProgressViewer(self._mdl, self._ui, self._ctrl, self)
         self._progress_viewer.title(f'{self._mdl.novel.title} - {self.FEATURE}')
         set_icon(self._progress_viewer, icon='wLogo32', default=False)
 
