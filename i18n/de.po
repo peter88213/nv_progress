@@ -1,0 +1,42 @@
+# nv_progress Dictionary (English-German)
+# Copyright (C) 2025 Peter Triesberger
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 5.1.1\n"
+"POT-Creation-Date: 2025-06-15 11:04:56\n"
+"PO-Revision-Date: 2025-06-15 11:04:56\n"
+"Last-Translator: Peter Triesberger\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "Close"
+msgstr "Schließen"
+
+msgid "Ctrl"
+msgstr "Strg"
+
+msgid "Daily"
+msgstr "Täglich"
+
+msgid "Daily progress log"
+msgstr "Täglicher Schreibfortschritt"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Progress viewer Online help"
+msgstr "Schreibfortschritt Online-Hilfe"
+
+msgid "With unused"
+msgstr "Mit unbenutzten"
+
+msgid "Words total"
+msgstr "Wörter gesamt"
+
+msgid "https://peter88213.github.io/nvhelp-en"
+msgstr "https://peter88213.github.io/nvhelp-de"
+
