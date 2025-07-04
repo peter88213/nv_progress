@@ -1,12 +1,12 @@
 """Provide a mixin class for a progress view controller.
 
-Copyright (c) 2024 Peter Triesberger
+Copyright (c) 2025 Peter Triesberger
 For further information see https://github.com/peter88213/nv_progress
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 from datetime import date
 
-from mvclib.controller.sub_controller import SubController
+from nvlib.controller.sub_controller import SubController
 
 
 class ProgressViewCtrl(SubController):
@@ -40,8 +40,6 @@ class ProgressViewCtrl(SubController):
         lastCount = 0
         lastTotalCount = 0
         for wc in wcLog:
-            columns = []
-            nodeTags = ()
             countInt = int(wcLog[wc][0])
             countDiffInt = countInt - lastCount
             totalCountInt = int(wcLog[wc][1])

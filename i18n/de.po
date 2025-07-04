@@ -1,11 +1,11 @@
 # nv_progress Dictionary (English-German)
-# Copyright (C) 2022 Peter Triesberger
+# Copyright (C) 2025 Peter Triesberger
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.0.5\n"
-"POT-Creation-Date: 2024-12-17 12:26:55\n"
-"PO-Revision-Date: 2024-12-17 12:26:55\n"
+"Project-Id-Version: 5.0.6\n"
+"POT-Creation-Date: 2025-04-15 14:04:02\n"
+"PO-Revision-Date: 2025-04-15 14:04:02\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"

@@ -3,10 +3,10 @@
 For further information see https://github.com/peter88213/nv_progress
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
-from mvclib.user_interface.main_tk import MainTk
 from nv_progress import Plugin
 from nvlib.configuration.configuration import Configuration
 from nvlib.model.nv_work_file import NvWorkFile
+from nvlib.user_interface.simple_gui import SimpleGui
 from nvprogress.nvprogress_locale import _
 import tkinter as tk
 
@@ -19,7 +19,7 @@ class NvServiceMock:
         return Configuration(**kwargs)
 
 
-class ProgressTk(MainTk):
+class ProgressTk(SimpleGui):
 
     def __init__(self):
         kwargs = {

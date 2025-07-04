@@ -1,7 +1,7 @@
 """A daily progress log viewer plugin for novelibre.
 
 Requires Python 3.6+
-Copyright (c) 2024 Peter Triesberger
+Copyright (c) 2025 Peter Triesberger
 For further information see https://github.com/peter88213/nv_progress
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 
@@ -17,8 +17,8 @@ GNU General Public License for more details.
 """
 import webbrowser
 
-from nvlib.controller.plugin.plugin_base import PluginBase
 from nvprogress.nvprogress_locale import _
+from nvlib.controller.plugin.plugin_base import PluginBase
 from nvprogress.progress_service import ProgressService
 
 
@@ -54,9 +54,6 @@ class Plugin(PluginBase):
             view -- reference to the main view instance of the application.
             controller -- reference to the main controller instance of the application.
 
-        Optional arguments:
-            prefs -- deprecated. Please use controller.get_preferences() instead.
-        
         Extends the superclass method.
         """
         super().install(model, view, controller)
