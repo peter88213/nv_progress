@@ -7,7 +7,7 @@ import tkinter as tk
 from novxlib.novxlib_globals import *
 from novxlib.ui.main_tk import MainTk
 from nv_progress import Plugin
-from noveltreelib.model.nv_work_file import NvWorkFile
+from nvlib.model.nv_work_file import NvWorkFile
 
 APPLICATION = 'View daily progress log'
 

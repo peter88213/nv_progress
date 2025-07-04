@@ -1,4 +1,10 @@
-# nv_progress
+[![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v2.0.0.zip)
+[![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
+[![News](docs/img/news-button.png)](https://github.com/peter88213/noveltree/discussions/1)
+[![Online help](docs/img/help-button.png)](docs/usage.md)
+
+
+# ![W](icons/wLogo32.png] nv_progress
 
 The [noveltree](https://github.com/peter88213/noveltree/) Python program helps authors organize novels.  
 
@@ -12,13 +18,13 @@ The [noveltree](https://github.com/peter88213/noveltree/) Python program helps a
 
 ## Requirements
 
-- [noveltree](https://github.com/peter88213/noveltree/) version 1.8+
+- [noveltree](https://github.com/peter88213/noveltree/) version 2.0+
 
 ## Download and install
 
-[Download the latest release (version 1.1.0)](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v1.1.0.zip)
+[Download the latest release (version 2.0.0)](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v2.0.0.zip)
 
-- Extract the "nv_progress_v1.1.0" folder from the downloaded zipfile "nv_progress_v1.1.0.zip".
+- Extract the "nv_progress_v2.0.0" folder from the downloaded zipfile "nv_progress_v2.0.0.zip".
 - Move into this new folder and launch **setup.pyw**. This installs the plugin for the local user.
 
 ---
