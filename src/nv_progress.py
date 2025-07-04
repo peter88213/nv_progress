@@ -18,6 +18,7 @@ GNU General Public License for more details.
 from pathlib import Path
 
 from novxlib.ui.set_icon_tk import set_icon
+from nvlib.plugin.plugin_base import PluginBase
 from nvprogresslib.nvprogress_globals import _
 from nvprogresslib.progress_viewer import ProgressViewer
 
@@ -35,27 +36,37 @@ SETTINGS = dict(
 OPTIONS = {}
 
 
-class Plugin:
+class Plugin(PluginBase):
     """novelibre daily progress log viewer plugin class."""
     VERSION = '@release'
-    API_VERSION = '4.0'
+    API_VERSION = '4.3'
     DESCRIPTION = 'A daily progress log viewer'
     URL = 'https://github.com/peter88213/nv_progress'
 
     def disable_menu(self):
-        """Disable menu entries when no project is open."""
+        """Disable menu entries when no project is open.
+        
+        Overrides the superclass method.
+        """
         self._ui.toolsMenu.entryconfig(APPLICATION, state='disabled')
 
     def enable_menu(self):
-        """Enable menu entries when a project is open."""
+        """Enable menu entries when a project is open.
+        
+        Overrides the superclass method.
+        """
         self._ui.toolsMenu.entryconfig(APPLICATION, state='normal')
 
     def install(self, model, view, controller, prefs):
         """Add a submenu to the 'Tools' menu.
         
         Positional arguments:
-            controller -- reference to the main controller instance of the application.
+            model -- reference to the main model instance of the application.
             view -- reference to the main view instance of the application.
+            controller -- reference to the main controller instance of the application.
+            prefs -- reference to the application's global dictionary with settings and options.
+        
+        Overrides the superclass method.
         """
         self._mdl = model
         self._ui = view
@@ -82,11 +93,17 @@ class Plugin:
         self._ui.toolsMenu.entryconfig(APPLICATION, state='disabled')
 
     def on_close(self):
-        """Close the window."""
+        """Close the window.
+        
+        Overrides the superclass method.
+        """
         self.on_quit()
 
     def on_quit(self):
-        """Write back the configuration file."""
+        """Write back the configuration file.
+        
+        Overrides the superclass method.
+        """
         if self._progress_viewer:
             if self._progress_viewer.isOpen:
                 self._progress_viewer.on_quit()
