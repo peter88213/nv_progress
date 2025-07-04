@@ -3,8 +3,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.2.8\n"
-"POT-Creation-Date: 2024-10-30 08:19:05\n"
+"Project-Id-Version: 4.2.9\n"
+"POT-Creation-Date: 2024-10-30 09:37:38\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: LANGUAGE\n"
@@ -36,4 +36,7 @@ msgid "With unused"
 msgstr ""
 
 msgid "Words total"
+msgstr ""
+
+msgid "nvhelp-en"
 msgstr ""

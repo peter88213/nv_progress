@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.2.8\n"
-"POT-Creation-Date: 2024-10-30 08:19:05\n"
-"PO-Revision-Date: 2024-10-30 08:19:05\n"
+"Project-Id-Version: 4.2.9\n"
+"POT-Creation-Date: 2024-10-30 09:37:38\n"
+"PO-Revision-Date: 2024-10-30 09:37:38\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -36,4 +36,7 @@ msgstr "Mit unbenutzten"
 
 msgid "Words total"
 msgstr "Wörter gesamt"
+
+msgid "nvhelp-en"
+msgstr "nvhelp-de"
 
