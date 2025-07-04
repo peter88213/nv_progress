@@ -1,4 +1,4 @@
-"""A daily progress log viewer plugin for noveltree.
+"""A daily progress log viewer plugin for novelibre.
 
 Requires Python 3.6+
 Copyright (c) 2024 Peter Triesberger
@@ -37,9 +37,9 @@ OPTIONS = {}
 
 
 class Plugin:
-    """noveltree daily progress log viewer plugin class."""
+    """novelibre daily progress log viewer plugin class."""
     VERSION = '@release'
-    API_VERSION = '2.0'
+    API_VERSION = '2.1'
     DESCRIPTION = 'A daily progress log viewer'
     URL = 'https://github.com/peter88213/nv_progress'
 

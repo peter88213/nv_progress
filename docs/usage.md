@@ -2,15 +2,15 @@
 
 --- 
 
-A [noveltree](https://github.com/peter88213/noveltree/) plugin providing a daily progress log viewer. 
+A [novelibre](https://github.com/peter88213/novelibre/) plugin providing a daily progress log viewer. 
 
 ---
 
 # Installation
 
-If [noveltree](https://github.com/peter88213/noveltree/) is installed, the setup script auto-installs the *nv_progress* plugin in the *noveltree* plugin directory.
+If [novelibre](https://github.com/peter88213/novelibre/) is installed, the setup script auto-installs the *nv_progress* plugin in the *novelibre* plugin directory.
 
-The plugin adds a **Daily progress log** entry to the *noveltree* **Tools** menu. 
+The plugin adds a **Daily progress log** entry to the *novelibre* **Tools** menu. 
 
 ---
 

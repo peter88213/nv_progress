@@ -1,4 +1,4 @@
-"""Build a collection noveltree plugin.
+"""Build a collection novelibre plugin.
         
 In order to distribute a single script without dependencies, 
 this script "inlines" all modules imported from the novxlib package.
@@ -24,7 +24,7 @@ TARGET_FILE = f'{BUILD}nv_progress.py'
 def main():
     os.makedirs(BUILD, exist_ok=True)
     inliner.run(SOURCE_FILE, TARGET_FILE, 'nvprogresslib', '../../nv_progress/src/')
-    inliner.run(TARGET_FILE, TARGET_FILE, 'nvlib', '../../noveltree/src/')
+    inliner.run(TARGET_FILE, TARGET_FILE, 'nvlib', '../../novelibre/src/')
     inliner.run(TARGET_FILE, TARGET_FILE, 'novxlib', '../../novxlib/src/')
     print('Done.')
 

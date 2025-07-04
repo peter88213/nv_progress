@@ -2,15 +2,15 @@
 
 --- 
 
-Ein [noveltree](https://github.com/peter88213/noveltree/)-Plugin providing a daily progress log viewer. 
+Ein [novelibre](https://github.com/peter88213/novelibre/)-Plugin providing a daily progress log viewer. 
 
 ---
 
 # Installation
 
-Wenn [noveltree](https://github.com/peter88213/noveltree/) installiert ist, installiert das Setup-Skript automatisch das*nv_progress*-Plugin im *noveltree* Plugin-Verzeichnis.
+Wenn [novelibre](https://github.com/peter88213/novelibre/) installiert ist, installiert das Setup-Skript automatisch das*nv_progress*-Plugin im *novelibre* Plugin-Verzeichnis.
 
-Das Plugin hängt einen **Täglicher Schreibfortschritt**-Eintrag an das *noveltree* **Extras**-Menü an. 
+Das Plugin hängt einen **Täglicher Schreibfortschritt**-Eintrag an das *novelibre* **Extras**-Menü an. 
 
 ---
 
