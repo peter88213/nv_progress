@@ -4,6 +4,16 @@
 
 ## Changelog
 
+
+### Version 4.2.6
+
+Refactor:
+- Move platform selector and keyboard settings into the new platform_settings module.
+- Create platform specific key classes.
+
+Compatibility: novelibre 4.3 API
+Based on novxlib 4.6.4
+
 ### Version 4.2.5
 
 - Refactor platform detection.

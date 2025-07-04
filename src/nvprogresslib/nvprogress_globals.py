@@ -5,7 +5,6 @@ For further information see https://github.com/peter88213/nv_progress
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import os
-import platform
 import sys
 import gettext
 import locale
@@ -24,13 +23,4 @@ except:
 
     def _(message):
         return message
-
-if platform.system() == 'Windows':
-    PLATFORM = 'win'
-elif platform.system() in ('Linux', 'FreeBSD'):
-    PLATFORM = 'ix'
-elif platform.system() == 'Darwin':
-    PLATFORM = 'mac'
-else:
-    PLATFORM = ''
 

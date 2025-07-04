@@ -8,12 +8,12 @@ from datetime import date
 from tkinter import ttk
 
 from nvprogresslib.nvprogress_globals import _
-from nvprogresslib.nvprogress_globals import PLATFORM
+from nvprogresslib.platform_settings import PLATFORM
+from nvprogresslib.platform_settings import KEYS
 import tkinter as tk
 
 
 class ProgressViewer(tk.Toplevel):
-    _KEY_QUIT_PROGRAM = ('<Control-q>', f'{_("Ctrl")}-Q')
 
     def __init__(self, plugin, model):
         self._plugin = plugin
@@ -25,7 +25,7 @@ class ProgressViewer(tk.Toplevel):
         self.focus()
         self.protocol("WM_DELETE_WINDOW", self.on_quit)
         if PLATFORM != 'win':
-            self.bind(self._KEY_QUIT_PROGRAM[0], self.on_quit)
+            self.bind(KEYS.QUIT_PROGRAM[0], self.on_quit)
 
         #--- Tree for log view.
         columns = (
