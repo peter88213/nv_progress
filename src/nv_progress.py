@@ -39,7 +39,7 @@ OPTIONS = {}
 class Plugin:
     """novelibre daily progress log viewer plugin class."""
     VERSION = '@release'
-    API_VERSION = '2.1'
+    API_VERSION = '3.0'
     DESCRIPTION = 'A daily progress log viewer'
     URL = 'https://github.com/peter88213/nv_progress'
 
