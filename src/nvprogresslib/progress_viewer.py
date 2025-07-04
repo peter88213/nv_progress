@@ -5,6 +5,7 @@ For further information see https://github.com/peter88213/nv_progress
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 from datetime import date
+import sys
 from tkinter import ttk
 
 from nvprogresslib.nvprogress_globals import _
@@ -21,8 +22,10 @@ class ProgressViewer(tk.Toplevel):
 
         self.geometry(self._plugin.kwargs['window_geometry'])
         self.lift()
+        self.focus()
         self.protocol("WM_DELETE_WINDOW", self.on_quit)
-        self.bind(self._KEY_QUIT_PROGRAM[0], self.on_quit)
+        if sys.platform != 'win32':
+            self.bind(self._KEY_QUIT_PROGRAM[0], self.on_quit)
 
         #--- Tree for log view.
         columns = (
@@ -54,6 +57,9 @@ class ProgressViewer(tk.Toplevel):
         self.tree.tag_configure('negative', foreground='red')
         self.isOpen = True
         self.build_tree()
+
+        # "Close" button.
+        ttk.Button(self, text=_('Close'), command=self.on_quit).pack(side='right', padx=5, pady=5)
 
     def build_tree(self):
         self.reset_tree()

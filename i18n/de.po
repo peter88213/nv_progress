@@ -3,15 +3,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 3.0.0\n"
-"POT-Creation-Date: 2024-03-07 23:14:29\n"
-"PO-Revision-Date: 2024-03-07 23:14:30\n"
+"Project-Id-Version: 3.0.1\n"
+"POT-Creation-Date: 2024-03-09 20:46:30\n"
+"PO-Revision-Date: 2024-03-09 20:46:30\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+
+msgid "Close"
+msgstr "Schließen"
 
 msgid "Daily"
 msgstr "Täglich"
@@ -26,5 +29,5 @@ msgid "With unused"
 msgstr "Mit unbenutzten"
 
 msgid "Words total"
-msgstr "Wortzahl"
+msgstr "Wörter gesamt"
 

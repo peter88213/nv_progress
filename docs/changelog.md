@@ -4,6 +4,15 @@
 
 ## Changelog
 
+### Version 3.0.1
+
+- On Windows, do not assign the Ctrl Q shortcut for closing.
+- Add a "Close" button.
+- Get the focus when popping up.
+
+Based on novxlib v2.0.1
+Compatibility: novelibre v3.0 API
+
 ### Version 3.0.0
 
 - Refactor the code for v3.0 API.
