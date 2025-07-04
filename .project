@@ -3,7 +3,7 @@
 	<name>nv_progress</name>
 	<comment></comment>
 	<projects>
-		<project>novxlib</project>
+		<project>novelibre</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

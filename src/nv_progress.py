@@ -121,6 +121,8 @@ class Plugin(PluginBase):
     def _start_viewer(self):
         if self._progress_viewer:
             if self._progress_viewer.isOpen:
+                if self._progress_viewer.state() == 'iconic':
+                    self._progress_viewer.state('normal')
                 self._progress_viewer.lift()
                 self._progress_viewer.focus()
                 self._progress_viewer.build_tree()

@@ -4,6 +4,16 @@
 
 A [novelibre](https://github.com/peter88213/novelibre/) plugin providing a daily progress log viewer. 
 
+
+---
+
+# Installation
+
+- Unzip the downloaded zipfile into a new folder.
+- Move into this new folder and launch **setup.pyw**. This installs the plugin.
+
+*Note: If you install novelibre at a later time, you can always install the plugin afterwards by running the nv_progress/ setup script again.*
+
 The plugin adds a **Daily progress log** entry to the *novelibre* **Tools** menu. 
 
 ---
@@ -12,22 +22,7 @@ The plugin adds a **Daily progress log** entry to the *novelibre* **Tools** menu
 
 ---
 
-## Launch the program
-
-- Open the progress log viewer from the main menu: **Tools > Daily progress log**.
-
----
-
-## Update today's word count
-
-
-- If the *nv_progress* window is already open, you can update the actual word count with **Tools > Daily progress log**.
-
----
-
-## Exit
-
-- You can exit with **Ctrl-Q**, or just by closing the window.
+See the [online help](https://github.com/peter88213/nv_progress/tree/main/docs/nv_progress).
 
 ---
 
