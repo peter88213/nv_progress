@@ -1,4 +1,4 @@
-# nv_progress
+# noveltree_progress
 
 The [noveltree](https://peter88213.github.io/noveltree/) Python program helps authors organize novels.  
 

@@ -1,4 +1,4 @@
-# nv_progress
+# noveltree_progress
 
 The [noveltree](https://peter88213.github.io/noveltree/) Python program helps authors organize novels.  
 
@@ -16,9 +16,9 @@ The [noveltree](https://peter88213.github.io/noveltree/) Python program helps au
 
 ## Download and install
 
-[Download the latest release (version 1.0.0)](https://github.com/peter88213/noveltree_progress/raw/main/dist/nv_progress_v1.0.0.zip)
+[Download the latest release (version 1.0.1)](https://github.com/peter88213/noveltree_progress/raw/main/dist/nv_progress_v1.0.1.zip)
 
-- Extract the "nv_progress_v1.0.0" folder from the downloaded zipfile "nv_progress_v1.0.0.zip".
+- Extract the "nv_progress_v1.0.1" folder from the downloaded zipfile "nv_progress_v1.0.1.zip".
 - Move into this new folder and launch **setup.pyw**. This installs the plugin for the local user.
 
 ---

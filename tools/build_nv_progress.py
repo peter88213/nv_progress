@@ -22,7 +22,7 @@ TARGET_FILE = f'{BUILD}nv_progress.py'
 
 
 def main():
-    inliner.run(SOURCE_FILE, TARGET_FILE, 'nvprogresslib', '../../novelyst_progress/src/')
+    inliner.run(SOURCE_FILE, TARGET_FILE, 'nvprogresslib', '../../noveltree_progress/src/')
     inliner.run(TARGET_FILE, TARGET_FILE, 'noveltreelib', '../../noveltree/src/')
     inliner.run(TARGET_FILE, TARGET_FILE, 'novxlib', '../../novxlib/src/')
     print('Done.')
