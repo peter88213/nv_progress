@@ -4,6 +4,12 @@
 
 ## Changelog
 
+### Version 4.1.0
+
+- Use a novelibre service factory method instead of importing the novxlib configuration module.
+
+Compatibility: novelibre v4.1 API
+
 ### Version 3.1.0
 
 - Localize the dates.
