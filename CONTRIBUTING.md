@@ -75,8 +75,6 @@ An easy way may be to put a posting in the [novelibre forum](https://github.com/
 
 ## Development
 
-*nv_progress* depends on the [novxlib](https://github.com/peter88213/novxlib) and [progressnv](https://github.com/peter88213/progressnv) libraries which must be present in your file system. It is organized as an Eclipse PyDev project. The official release branch on GitHub is *main*.
-
 ### Mandatory directory structure for building the plugin package
 
 ```
@@ -92,9 +90,6 @@ An easy way may be to put a posting in the [novelibre forum](https://github.com/
 │       ├── pgettext.py
 │       ├── translate_de.py
 │       └── translations.py
-├── novxlib/
-│   └── src/
-│       └── novxlib/
 └── nv_progress/
     ├── i18n/
     ├── src/
@@ -105,7 +100,7 @@ An easy way may be to put a posting in the [novelibre forum](https://github.com/
 
 ### Conventions
 
-See https://github.com/peter88213/novxlib/blob/main/docs/conventions.md
+See https://github.com/peter88213/novelibre/blob/main/docs/conventions.md
 
 ## Development tools
 

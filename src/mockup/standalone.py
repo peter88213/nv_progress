@@ -3,11 +3,11 @@
 For further information see https://github.com/peter88213/nv_progress
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
-from novxlib.config.configuration import Configuration
-from novxlib.ui.main_tk import MainTk
+from mvclib.user_interface.main_tk import MainTk
 from nv_progress import Plugin
+from nvlib.configuration.configuration import Configuration
 from nvlib.model.nv_work_file import NvWorkFile
-from nvprogresslib.nvprogress_globals import _
+from nvprogress.nvprogress_locale import _
 import tkinter as tk
 
 APPLICATION = 'View daily progress log'
@@ -15,7 +15,7 @@ APPLICATION = 'View daily progress log'
 
 class NvServiceMock:
 
-    def make_configuration(self, **kwargs):
+    def new_configuration(self, **kwargs):
         return Configuration(**kwargs)
 
 
@@ -46,10 +46,10 @@ class ProgressTk(MainTk):
         super().enable_menu()
         self.plugin.enable_menu()
 
-    def register_view(self, view):
+    def add_observer(self, view):
         pass
 
-    def unregister_view(self, view):
+    def delete_observer(self, view):
         pass
 
 

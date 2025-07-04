@@ -1,6 +1,6 @@
-[![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v4.3.0.pyzw)
+[![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v5.0.5.pyzw)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
-[![News](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions/1)
+[![News/Feedback](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions)
 [![Online help](docs/img/help-button.png)](https://peter88213.github.io/nvhelp-en/nv_progress/)
 
 
@@ -18,16 +18,16 @@ The [novelibre](https://github.com/peter88213/novelibre/) Python program helps a
 
 ## Requirements
 
-- [novelibre](https://github.com/peter88213/novelibre/) version 4.3+
+- [novelibre](https://github.com/peter88213/novelibre/) version 5.0+
 
 ## Download and install
 
 ### Default: Executable Python zip archive
 
-Download the latest release [nv_progress_v4.3.0.pyzw](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v4.3.0.pyzw)
+Download the latest release [nv_progress_v5.0.5.pyzw](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v5.0.5.pyzw)
 
-- Launch *nv_progress_v4.3.0.pyzw* by double-clicking (Windows/Linux desktop),
-- or execute `python nv_progress_v4.3.0.pyzw` (Windows), resp. `python3 nv_progress_v4.3.0.pyzw` (Linux) on the command line.
+- Launch *nv_progress_v5.0.5.pyzw* by double-clicking (Windows/Linux desktop),
+- or execute `python nv_progress_v5.0.5.pyzw` (Windows), resp. `python3 nv_progress_v5.0.5.pyzw` (Linux) on the command line.
 
 #### Important
 
@@ -43,9 +43,9 @@ the zip file.
 
 ### Alternative: Zip file
 
-The package is also available in zip format: [nv_progress_v4.3.0.zip](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v4.3.0.zip)
+The package is also available in zip format: [nv_progress_v5.0.5.zip](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v5.0.5.zip)
 
-- Extract the *nv_progress_v4.3.0* folder from the downloaded zipfile "nv_progress_v4.3.0.zip".
+- Extract the *nv_progress_v5.0.5* folder from the downloaded zipfile "nv_progress_v5.0.5.zip".
 - Move into this new folder and launch *setup.pyw* by double-clicking (Windows/Linux desktop), 
 - or execute `python setup.pyw` (Windows), resp. `python3 setup.pyw` (Linux) on the command line.
 

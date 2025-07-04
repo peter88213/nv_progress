@@ -6,9 +6,9 @@ License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import platform
 
-from nvprogresslib.platform.generic_keys import GenericKeys
-from nvprogresslib.platform.mac_keys import MacKeys
-from nvprogresslib.platform.windows_keys import WindowsKeys
+from nvprogress.platform.generic_keys import GenericKeys
+from nvprogress.platform.mac_keys import MacKeys
+from nvprogress.platform.windows_keys import WindowsKeys
 
 if platform.system() == 'Windows':
     PLATFORM = 'win'
