@@ -22,7 +22,7 @@ The plugin adds a **Daily progress log** entry to the *novelibre* **Tools** menu
 
 ---
 
-See the [online help](https://github.com/peter88213/nv_progress/tree/main/docs/nv_progress).
+See the [online help](https://peter88213.github.io/nvhelp-en/nv_progress).
 
 ---
 

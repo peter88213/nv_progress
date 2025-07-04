@@ -5,6 +5,14 @@
 ## Changelog
 
 
+### Version 4.2.8
+
+- Update the help link.
+
+Compatibility: novelibre 4.3 API
+Based on novxlib 4.8.0
+Based on apptk 1.1.0
+
 ### Version 4.2.7
 
 - Add help menu entry.

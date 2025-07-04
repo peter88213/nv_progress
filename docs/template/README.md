@@ -1,7 +1,7 @@
 [![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v0.99.0.pyzw)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
 [![News](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions/1)
-[![Online help](docs/img/help-button.png)](docs/nv_progress/)
+[![Online help](docs/img/help-button.png)](https://peter88213.github.io/nvhelp-en/nv_progress/)
 
 
 # ![W](icons/wLogo32.png) nv_progress
@@ -55,7 +55,7 @@ The package is also available in zip format: [nv_progress_v0.99.0.zip](https://g
 
 ## Usage
 
-See the [online manual](docs/nv_progress/)
+See the [online manual](https://peter88213.github.io/nvhelp-en/nv_progress/)
 
 ---
 
