@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="nv_progress" basedir=".">
-	<property name="version" value="4.2.0" />
+	<property name="version" value="4.2.1" />
 	<property name="plugin" value="nv_progress" />
 	
 	<property name="source-path" location="../src" />
@@ -33,12 +33,11 @@
 		<copy file="${test-path}/${plugin}.py" todir="${build-path}/${release}" />
 		<replace encoding="utf-8" file="${build-path}/${release}/${plugin}.py" token="@release" value="${version}" />
 		
-		<copy file="${source-path}/setup.pyw" todir="${build-path}/${release}" />		
-		<replace encoding="utf-8" file="${build-path}/${release}/setup.pyw" token="@release" value="${version}" />
+      <copy file="${source-path}/setuplib.py" todir="${build-path}/${release}" />     
+      <replace encoding="utf-8" file="${build-path}/${release}/setuplib.py" token="@release" value="${version}" />
 
 		<copy file="../LICENSE" todir="${build-path}/${release}" />	
-		<copy file="${docs-path}/usage.md" tofile="${build-path}/${release}/README.md" />
-		
+				
 		<fixcrlf encoding="utf-8" eol="lf" srcdir="${build-path}/${release}" includes="**/*.*" />
 				
 		<copy todir="${build-path}/${release}/locale"> 
@@ -49,7 +48,14 @@
 			<fileset dir="../icons" />
 		</copy>
 		
-		<zip destfile="${dist-path}/${release}.zip" basedir="${build-path}" />
+      <exec executable="python" failonerror="true">
+         <arg value="-m"/>
+         <arg value="zipapp"/>
+         <arg value="-o=${dist-path}/${release}.pyzw"/>
+         <arg value="-m=setuplib:main"/>
+         <arg value="-c"/>
+         <arg value="${build-path}/${release}"/>
+      </exec>  
 		
 		<copy file="${docs-path}/template/README.md" overwrite="True" todir=".." />
 		<replace encoding="utf-8" file="../README.md" token="0.99.0" value="${version}" />
@@ -62,4 +68,10 @@
 		<delete file="${test-path}/${plugin}.py" />
 	</target>
 
+   <target name="zip" description="generate a zipfile">      
+      <copy file="${docs-path}/usage.md" tofile="${build-path}/${release}/README.md" />
+      <copy file="${source-path}/setup.pyw" todir="${build-path}/${release}" />     
+      <zip destfile="${dist-path}/${release}.zip" basedir="${build-path}" />
+   </target>
+   
 </project>

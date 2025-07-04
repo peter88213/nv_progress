@@ -1,4 +1,4 @@
-[![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v4.2.0.zip)
+[![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v4.2.1.pyzw)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
 [![News](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions/1)
 [![Online help](docs/img/help-button.png)](docs/usage.md)
@@ -22,10 +22,32 @@ The [novelibre](https://github.com/peter88213/novelibre/) Python program helps a
 
 ## Download and install
 
-[Download the latest release (version 4.2.0)](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v4.2.0.zip)
+### Default: Executable Python zip archive
 
-- Extract the "nv_progress_v4.2.0" folder from the downloaded zipfile "nv_progress_v4.2.0.zip".
-- Move into this new folder and launch **setup.pyw**. This installs the plugin for the local user.
+Download the latest release [nv_progress_v4.2.1.pyzw](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v4.2.1.pyzw)
+
+- Launch *nv_progress_v4.2.1.pyzw* by double-clicking (Windows/Linux desktop),
+- or execute `python nv_progress_v4.2.1.pyzw` (Windows), resp. `python3 nv_progress_v4.2.1.pyzw` (Linux) on the command line.
+
+#### Important
+
+Many web browsers recognize the download as an executable file and offer to open it immediately. 
+This starts the installation.
+
+However, depending on your security settings, your browser may 
+initially  refuse  to download the executable file. 
+In this case, your confirmation or an additional action is required. 
+If this is not possible, you have the option of downloading 
+the zip file. 
+
+
+### Alternative: Zip file
+
+The package is also available in zip format: [nv_progress_v4.2.1.zip](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v4.2.1.zip)
+
+- Extract the *nv_progress_v4.2.1* folder from the downloaded zipfile "nv_progress_v4.2.1.zip".
+- Move into this new folder and launch *setup.pyw* by double-clicking (Windows/Linux desktop), 
+- or execute `python setup.pyw` (Windows), resp. `python3 setup.pyw` (Linux) on the command line.
 
 ---
 
@@ -33,7 +55,7 @@ The [novelibre](https://github.com/peter88213/novelibre/) Python program helps a
 
 ## Usage
 
-See the [instructions for use](docs/usage.md)
+See the [online manual](docs/usage.md)
 
 ---
 

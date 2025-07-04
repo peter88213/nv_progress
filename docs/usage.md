@@ -4,12 +4,6 @@
 
 A [novelibre](https://github.com/peter88213/novelibre/) plugin providing a daily progress log viewer. 
 
----
-
-# Installation
-
-If [novelibre](https://github.com/peter88213/novelibre/) is installed, the setup script auto-installs the *nv_progress* plugin in the *novelibre* plugin directory.
-
 The plugin adds a **Daily progress log** entry to the *novelibre* **Tools** menu. 
 
 ---
