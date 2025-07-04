@@ -1,0 +1,30 @@
+# nv_progress Dictionary (English-German)
+# Copyright (C) 2022 Peter Triesberger
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0.0\n"
+"POT-Creation-Date: 2024-01-08 21:13:46\n"
+"PO-Revision-Date: 2024-01-08 21:13:47\n"
+"Last-Translator: Peter Triesberger\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "Daily"
+msgstr "Täglich"
+
+msgid "Daily progress log"
+msgstr "Täglicher Schreibfortschritt"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "With unused"
+msgstr "Mit unbenutzten"
+
+msgid "Words total"
+msgstr "Wortzahl"
+
