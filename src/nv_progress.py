@@ -69,8 +69,8 @@ class Plugin(PluginBase):
         self._ui.toolsMenu.add_command(
             label=self.FEATURE,
             command=self.start_viewer,
+            state='disabled',
         )
-        self._ui.toolsMenu.entryconfig(self.FEATURE, state='disabled')
 
     def on_close(self):
         """Close the window.
