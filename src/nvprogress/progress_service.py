@@ -84,5 +84,5 @@ class ProgressService(SubController):
         self.progressView.title(
             f'{self._mdl.novel.title} - {windowTitle}'
         )
-        set_icon(self.progressView, icon='wLogo32', default=False)
+        set_icon(self.progressView, icon='progress', default=False)
 

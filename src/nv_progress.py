@@ -15,11 +15,13 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
+from pathlib import Path
 import webbrowser
 
 from nvprogress.nvprogress_locale import _
 from nvlib.controller.plugin.plugin_base import PluginBase
 from nvprogress.progress_service import ProgressService
+import tkinter as tk
 
 
 class Plugin(PluginBase):
@@ -58,18 +60,23 @@ class Plugin(PluginBase):
         """
         super().install(model, view, controller)
         self.progressService = ProgressService(model)
-
-        # Add an entry to the Help menu.
-        self._ui.helpMenu.add_command(
-            label=_('Progress viewer Online help'),
-            command=self.open_help,
-        )
+        self._icon = self._get_icon('progress.png')
 
         # Create an entry in the Tools menu.
         self._ui.toolsMenu.add_command(
             label=self.FEATURE,
+            image=self._icon,
+            compound='left',
             command=self.start_viewer,
             state='disabled',
+        )
+
+        # Add an entry to the Help menu.
+        self._ui.helpMenu.add_command(
+            label=_('Progress viewer Online help'),
+            image=self._icon,
+            compound='left',
+            command=self.open_help,
         )
 
     def on_close(self):
@@ -92,3 +99,16 @@ class Plugin(PluginBase):
     def start_viewer(self):
         self.progressService.start_viewer(self.FEATURE)
 
+    def _get_icon(self, fileName):
+        # Return the icon for the main view.
+        if self._ctrl.get_preferences().get('large_icons', False):
+            size = 24
+        else:
+            size = 16
+        try:
+            homeDir = str(Path.home()).replace('\\', '/')
+            iconPath = f'{homeDir}/.novx/icons/{size}'
+            icon = tk.PhotoImage(file=f'{iconPath}/{fileName}')
+        except:
+            icon = None
+        return icon
