@@ -142,19 +142,15 @@ class ProgressView(tk.Toplevel, Observer, SubController):
             wcLog[sessionDate] = self._mdl.prjFile.wcLogUpdate[wcDate]
 
         # Add the actual word count.
-        newCountInt, newTotalCountInt = self._mdl.prjFile.count_words()
-        newCount = str(newCountInt)
-        newTotalCount = str(newTotalCountInt)
+        newCount, newTotalCount = self._mdl.prjFile.count_words()
         today = date.today().strftime('%x')
         wcLog[today] = [newCount, newTotalCount]
 
         lastCount = 0
         lastTotalCount = 0
         for wc in wcLog:
-            countInt = int(wcLog[wc][0])
-            countDiffInt = countInt - lastCount
-            totalCountInt = int(wcLog[wc][1])
-            totalCountDiffInt = totalCountInt - lastTotalCount
+            countDiffInt = wcLog[wc][0] - lastCount
+            totalCountDiffInt = wcLog[wc][1] - lastTotalCount
             if countDiffInt == 0 and totalCountDiffInt == 0:
                 continue
 
@@ -169,8 +165,8 @@ class ProgressView(tk.Toplevel, Observer, SubController):
                 str(wcLog[wc][1]),
                 str(totalCountDiffInt),
             ]
-            lastCount = countInt
-            lastTotalCount = totalCountInt
+            lastCount = wcLog[wc][0]
+            lastTotalCount = wcLog[wc][1]
             # startIndex = 'end'
             # chronological order
             startIndex = '0'
