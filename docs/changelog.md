@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### Version 5.3.0
+
+- Refactored the code, processing the word count log with integers.
+
+API: 5.41
+Based on novelibre 5.41.0
+
 ### Version 5.2.0
 
 Added/changed icons.
