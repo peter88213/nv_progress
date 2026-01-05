@@ -5,6 +5,14 @@
 ## Changelog
 
 
+### Version 5.5.0
+
+Making sure the project's word count logging is activated.
+
+API: 5.44
+Based on novelibre 5.49.1
+
+
 ### Version 5.4.0
 
 - Using the menu methods provided with novelibre 5.44.

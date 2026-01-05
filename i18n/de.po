@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.4.0\n"
+"Project-Id-Version: 5.5.0\n"
 "POT-Creation-Date: 2025-11-10 19:47:46\n"
-"PO-Revision-Date: 2025-12-01 18:21:03\n"
+"PO-Revision-Date: 2026-01-05 21:37:52\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -33,6 +33,9 @@ msgstr "Schreibfortschritt Online-Hilfe"
 
 msgid "With unused"
 msgstr "Mit unbenutzten"
+
+msgid "Word count logging is enabled"
+msgstr "Schreibfortschritt wird protokolliert"
 
 msgid "Words total"
 msgstr "Wörter gesamt"

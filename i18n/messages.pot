@@ -1,10 +1,10 @@
 # nv_progress Dictionary
-# Copyright (C) 2025 Peter Triesberger
+# Copyright (C) 2026 Peter Triesberger
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.4.0\n"
-"POT-Creation-Date: 2025-12-01 18:21:03\n"
+"Project-Id-Version: 5.5.0\n"
+"POT-Creation-Date: 2026-01-05 21:39:49\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: LANGUAGE\n"
@@ -33,6 +33,9 @@ msgid "Progress viewer Online help"
 msgstr ""
 
 msgid "With unused"
+msgstr ""
+
+msgid "Word count logging is enabled"
 msgstr ""
 
 msgid "Words total"
