@@ -43,7 +43,7 @@ class Plugin(PluginBase):
         Extends the superclass method.
         """
         super().install(model, view, controller)
-        self.progressService = ProgressService(model)
+        self.progressService = ProgressService(model, view)
         self._icon = self._get_icon('progress.png')
 
         #--- Configure the main menu.
@@ -72,15 +72,7 @@ class Plugin(PluginBase):
         self.progressService.on_close()
 
     def on_open(self):
-        """Actions to be performed after a project is opened.
-        
-        Make sure the project's word count logging is activated.
-        
-        Overrides the superclass method.        
-        """
-        if not self._mdl.novel.saveWordCount:
-            self._mdl.novel.saveWordCount = True
-            self._ui.set_status(f"#{_('Word count logging is enabled')}.")
+        self.progressService.on_open()
 
     def on_quit(self):
         self.progressService.on_quit()

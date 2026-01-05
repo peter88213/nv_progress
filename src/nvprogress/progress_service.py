@@ -8,6 +8,7 @@ from pathlib import Path
 
 from nvlib.controller.sub_controller import SubController
 from nvlib.gui.set_icon_tk import set_icon
+from nvprogress.nvprogress_locale import _
 from nvprogress.progress_view import ProgressView
 
 
@@ -22,10 +23,13 @@ class ProgressService(SubController):
         totalcount_width=100,
         totalcount_delta_width=100,
     )
-    OPTIONS = {}
+    OPTIONS = dict(
+        force_logging=True,
+    )
 
-    def __init__(self, model):
+    def __init__(self, model, view):
         self._mdl = model
+        self._ui = view
         self.progressView = None
 
         #--- Load configuration.
@@ -50,6 +54,17 @@ class ProgressService(SubController):
         Overrides the superclass method.
         """
         self.on_quit()
+
+    def on_open(self):
+        """Actions to be performed after a project is opened.
+        
+        Make sure the project's word count logging is activated.
+        
+        Overrides the superclass method.        
+        """
+        if self._prefs['force_logging'] and not self._mdl.novel.saveWordCount:
+            self._mdl.novel.saveWordCount = True
+            self._ui.set_status(f"#{_('Word count logging is enabled')}.")
 
     def on_quit(self):
         """Write back the configuration file.
