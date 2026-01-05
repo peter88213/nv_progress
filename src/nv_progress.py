@@ -71,6 +71,17 @@ class Plugin(PluginBase):
     def on_close(self):
         self.progressService.on_close()
 
+    def on_open(self):
+        """Actions to be performed after a project is opened.
+        
+        Make sure the project's word count logging is activated.
+        
+        Overrides the superclass method.        
+        """
+        if not self._mdl.novel.saveWordCount:
+            self._mdl.novel.saveWordCount = True
+            self._ui.set_status(f"#{_('Word count logging is enabled')}.")
+
     def on_quit(self):
         self.progressService.on_quit()
 

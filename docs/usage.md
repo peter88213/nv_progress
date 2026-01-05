@@ -15,6 +15,7 @@ A [novelibre](https://github.com/peter88213/novelibre/) plugin providing a daily
 *Note: If you install novelibre at a later time, you can always install the plugin afterwards by running the nv_progress/ setup script again.*
 
 The plugin adds a **Daily progress log** entry to the *novelibre* **Tools** menu. 
+When a project is being opened, *nv_progress* makes sure the word count logging is activated.
 
 ---
 
