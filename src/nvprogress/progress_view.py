@@ -175,9 +175,14 @@ class ProgressView(tk.Toplevel, Observer, SubController):
                 wc,
                 str(wcLog[wc][0]),
                 str(countDiffInt),
-                str(wcLog[wc][1]),
-                str(totalCountDiffInt),
             ]
+            if self._prefs['show_unused']:
+                columns.extend(
+                    [
+                        str(wcLog[wc][1]),
+                        str(totalCountDiffInt),
+                    ]
+                )
             lastCount = wcLog[wc][0]
             lastTotalCount = wcLog[wc][1]
             # startIndex = 'end'
@@ -195,3 +200,4 @@ class ProgressView(tk.Toplevel, Observer, SubController):
 
     def _set_display(self):
         self._prefs['show_unused'] = self._withUnusedVar.get()
+        self.refresh()
