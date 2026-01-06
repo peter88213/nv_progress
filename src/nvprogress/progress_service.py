@@ -25,6 +25,7 @@ class ProgressService(SubController):
     )
     OPTIONS = dict(
         force_logging=True,
+        show_unused=True,
     )
 
     def __init__(self, model, view):

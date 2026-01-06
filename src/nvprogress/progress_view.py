@@ -91,6 +91,19 @@ class ProgressView(tk.Toplevel, Observer, SubController):
         self.tree.tag_configure('positive', foreground='black')
         self.tree.tag_configure('negative', foreground='red')
 
+        # "With unused" checkbox.
+        self._withUnusedVar = tk.BooleanVar(
+            value=self._prefs['show_unused']
+        )
+        ttk.Checkbutton(
+            self,
+            text=_('With unused'),
+            variable=self._withUnusedVar,
+            onvalue=True,
+            offvalue=False,
+            command=self._set_display,
+        ).pack(side='left', padx=5, pady=5)
+
         # "Close" button.
         ttk.Button(
             self,
@@ -180,3 +193,5 @@ class ProgressView(tk.Toplevel, Observer, SubController):
                 open=True,
             )
 
+    def _set_display(self):
+        self._prefs['show_unused'] = self._withUnusedVar.get()
