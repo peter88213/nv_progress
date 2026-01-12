@@ -5,6 +5,15 @@
 ## Changelog
 
 
+### Version 5.6.0
+
+- Refactored the code for better maintainability.
+- Changed the icon colors.
+
+API: 5.50
+Based on novelibre 5.50.0
+
+
 ### Version 5.5.0
 
 Making sure the project's word count logging is activated.
