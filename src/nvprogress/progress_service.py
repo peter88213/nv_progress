@@ -38,12 +38,12 @@ class ProgressService(SubController):
             configDir = f'{homeDir}/{self.INI_FILEPATH}'
         except:
             configDir = '.'
-        self.iniFile = f'{configDir}/{self.INI_FILENAME}'
         self.configuration = self._mdl.nvService.new_configuration(
             settings=self.SETTINGS,
             options=self.OPTIONS,
+            filePath=f'{configDir}/{self.INI_FILENAME}',
         )
-        self.configuration.read(self.iniFile)
+        self.configuration.read()
         self._prefs = {}
         self._prefs.update(self.configuration.settings)
         self._prefs.update(self.configuration.options)
@@ -81,7 +81,7 @@ class ProgressService(SubController):
                 self.configuration.options[keyword] = self._prefs[keyword]
             elif keyword in self.configuration.settings:
                 self.configuration.settings[keyword] = self._prefs[keyword]
-        self.configuration.write(self.iniFile)
+        self.configuration.write()
 
     def start_viewer(self, windowTitle):
         if self.progressView:
