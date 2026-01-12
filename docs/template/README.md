@@ -18,7 +18,7 @@ The [novelibre](https://github.com/peter88213/novelibre/) Python program helps a
 
 ## Requirements
 
-- [novelibre](https://github.com/peter88213/novelibre/) version 5.44+
+- [novelibre](https://github.com/peter88213/novelibre/) version 5.50+
 
 ## Download and install
 
