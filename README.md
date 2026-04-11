@@ -24,7 +24,7 @@ The [novelibre](https://github.com/peter88213/novelibre/) Python program helps a
 
 ### Default: Executable Python zip archive
 
-Download the latest release [nv_progress_v5.6.0.pyz](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v5.6.0.pyz)
+Download the latest release [nv_progress_v5.6.0.pyz](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v5.6.0.pyz) (20 KB)
 
 - Launch *nv_progress_v5.6.0.pyz* by double-clicking (Windows desktop),
 - or execute `python nv_progress_v5.6.0.pyz` (Windows), resp. `python3 nv_progress_v5.6.0.pyz` (Linux) on the command line.
@@ -42,7 +42,7 @@ Download the latest release [nv_progress_v5.6.0.pyz](https://github.com/peter882
 
 ### Alternative: Zip file
 
-The package is also available in zip format: [nv_progress_v5.6.0.zip](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v5.6.0.zip)
+The package is also available in zip format: [nv_progress_v5.6.0.zip](https://github.com/peter88213/nv_progress/raw/main/dist/nv_progress_v5.6.0.zip) (20 KB)
 
 - Extract the *nv_progress_v5.6.0* folder from the downloaded zipfile "nv_progress_v5.6.0.zip".
 - Move into this new folder and launch *setup.py* by double-clicking (Windows/Linux desktop), 
