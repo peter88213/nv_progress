@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.6.0\n"
+"Project-Id-Version: 5.7.0\n"
 "POT-Creation-Date: 2025-11-10 19:47:46\n"
-"PO-Revision-Date: 2026-01-12 17:06:01\n"
+"PO-Revision-Date: 2026-08-04 18:00:56\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -28,8 +28,8 @@ msgstr "Täglicher Schreibfortschritt"
 msgid "Date"
 msgstr "Datum"
 
-msgid "Progress viewer Online help"
-msgstr "Schreibfortschritt Online-Hilfe"
+msgid "Progress viewer plugin help"
+msgstr "Schreibfortschritt-Plugin Hilfe"
 
 msgid "With unused"
 msgstr "Mit unbenutzten"
@@ -39,6 +39,3 @@ msgstr "Schreibfortschritt wird protokolliert"
 
 msgid "Words total"
 msgstr "Wörter gesamt"
-
-msgid "https://peter88213.github.io/nvhelp-en"
-msgstr "https://peter88213.github.io/nvhelp-de"

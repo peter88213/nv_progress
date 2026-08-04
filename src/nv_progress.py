@@ -15,8 +15,6 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
-import webbrowser
-
 from nvprogress.nvprogress_locale import _
 from nvlib.controller.plugin.plugin_base import PluginBase
 from nvprogress.progress_service import ProgressService
@@ -25,10 +23,9 @@ from nvprogress.progress_service import ProgressService
 class Plugin(PluginBase):
     """novelibre daily progress log viewer plugin class."""
     VERSION = '@release'
-    API_VERSION = '5.50'
+    API_VERSION = '5.63'
     DESCRIPTION = 'A daily progress log viewer'
     URL = 'https://github.com/peter88213/nv_progress'
-    HELP_URL = f'{_("https://peter88213.github.io/nvhelp-en")}/nv_progress'
 
     FEATURE = _('Daily progress log')
 
@@ -46,7 +43,13 @@ class Plugin(PluginBase):
         self.progressService = ProgressService(model, view)
         self._icon = self._get_icon('progress.png')
 
-        #--- Configure the main menu.
+        #--- Configure the user interface.
+
+        def open_help():
+            self._ctrl.helpService.open_help_page('nv_progress')
+
+        def start_viewer():
+            self.progressService.start_viewer(self.FEATURE)
 
         # Add an entry to the Tools menu.
         label = self.FEATURE
@@ -54,18 +57,18 @@ class Plugin(PluginBase):
             label=label,
             image=self._icon,
             compound='left',
-            command=self.start_viewer,
+            command=start_viewer,
             state='disabled',
         )
         self._ui.toolsMenu.disableOnClose.append(label)
 
         # Add an entry to the Help menu.
-        label = _('Progress viewer Online help')
+        label = _('Progress viewer plugin help')
         self._ui.helpMenu.add_command(
             label=label,
             image=self._icon,
             compound='left',
-            command=self.open_help,
+            command=open_help,
         )
 
     def on_close(self):
@@ -76,10 +79,4 @@ class Plugin(PluginBase):
 
     def on_quit(self):
         self.progressService.on_quit()
-
-    def open_help(self, event=None):
-        webbrowser.open(self.HELP_URL)
-
-    def start_viewer(self):
-        self.progressService.start_viewer(self.FEATURE)
 
