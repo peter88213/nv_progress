@@ -26,6 +26,7 @@ class Plugin(PluginBase):
     API_VERSION = '5.63'
     DESCRIPTION = 'A daily progress log viewer'
     URL = 'https://github.com/peter88213/nv_progress'
+    HELP_PAGE = 'nv_progress'
 
     FEATURE = _('Daily progress log')
 
@@ -45,9 +46,6 @@ class Plugin(PluginBase):
 
         #--- Configure the user interface.
 
-        def open_help():
-            self._ctrl.helpService.open_help_page('nv_progress')
-
         def start_viewer():
             self.progressService.start_viewer(self.FEATURE)
 
@@ -62,14 +60,7 @@ class Plugin(PluginBase):
         )
         self._ui.toolsMenu.disableOnClose.append(label)
 
-        # Add an entry to the Help menu.
-        label = _('Progress viewer plugin help')
-        self._ui.helpMenu.add_command(
-            label=label,
-            image=self._icon,
-            compound='left',
-            command=open_help,
-        )
+        self._add_help_menu_entry(_('Progress viewer plugin help'))
 
     def on_close(self):
         self.progressService.on_close()
