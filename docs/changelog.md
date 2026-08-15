@@ -5,6 +5,14 @@
 ## Changelog
 
 
+### Version 5.7.3
+
+- Update for better "dark mode" support.
+
+API: 5.63
+Based on novelibre 5.64.4
+
+
 ### Version 5.7.2
 
 - Using the novelibre 5.63+ help service.

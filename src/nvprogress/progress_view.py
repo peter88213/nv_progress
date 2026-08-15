@@ -88,8 +88,8 @@ class ProgressView(tk.Toplevel, Observer, SubController):
             stretch=False,
         )
 
-        self.tree.tag_configure('positive', foreground='black')
-        self.tree.tag_configure('negative', foreground='red')
+        self.tree.tag_configure('positive',)
+        self.tree.tag_configure('negative', foreground='#ff0000')
 
         # "Close" button.
         ttk.Button(
