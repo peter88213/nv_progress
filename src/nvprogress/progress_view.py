@@ -18,11 +18,16 @@ import tkinter as tk
 
 class ProgressView(tk.Toplevel, Observer, SubController):
 
+    MIN_HEIGHT = 400
+    MIN_WIDTH = 500
+
     def __init__(self, model, prefs):
         tk.Toplevel.__init__(self)
         self._prefs = prefs
 
         self.geometry(self._prefs['window_geometry'])
+        self.minsize(self.MIN_WIDTH, self.MIN_HEIGHT)
+
         self.lift()
         self.focus()
         self.protocol("WM_DELETE_WINDOW", self.on_quit)
