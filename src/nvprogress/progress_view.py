@@ -19,7 +19,7 @@ import tkinter as tk
 class ProgressView(tk.Toplevel, Observer, SubController):
 
     MIN_HEIGHT = 400
-    MIN_WIDTH = 500
+    MIN_WIDTH = 200
 
     def __init__(self, model, prefs):
         tk.Toplevel.__init__(self)
