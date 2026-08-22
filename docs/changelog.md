@@ -5,6 +5,14 @@
 ## Changelog
 
 
+### Version 5.7.4
+
+- Resizing the progress window is now limited.
+
+API: 5.63
+Based on novelibre 5.65.1
+
+
 ### Version 5.7.3
 
 - Update for better "dark mode" support.
