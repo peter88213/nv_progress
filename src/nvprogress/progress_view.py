@@ -96,6 +96,13 @@ class ProgressView(tk.Toplevel, Observer, SubController):
         self.tree.tag_configure('positive',)
         self.tree.tag_configure('negative', foreground='#ff0000')
 
+        # "Export log file" button.
+        ttk.Button(
+            self,
+            text=_('Export log file'),
+            command=self._event('<<export_progress_log>>'),
+        ).pack(side='left', padx=5, pady=5)
+
         # "Close" button.
         ttk.Button(
             self,
@@ -185,3 +192,10 @@ class ProgressView(tk.Toplevel, Observer, SubController):
                 open=True,
             )
 
+    def _event(self, sequence):
+
+        def callback(*_):
+            root = self.winfo_toplevel()
+            root.event_generate(sequence)
+
+        return callback
