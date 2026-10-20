@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 5.7.4\n"
 "POT-Creation-Date: 2025-11-10 19:47:46\n"
-"PO-Revision-Date: 2026-08-21 22:35:19\n"
+"PO-Revision-Date: 2026-10-20 12:41:43\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -25,8 +25,23 @@ msgstr "Täglich"
 msgid "Daily progress log"
 msgstr "Täglicher Schreibfortschritt"
 
+msgid "Daily progress log file"
+msgstr "Täglicher Schreibfortschritt - Protokolldatei"
+
 msgid "Date"
 msgstr "Datum"
+
+msgid "Export log file"
+msgstr "Protokolldatei exportieren"
+
+msgid "File"
+msgstr "Datei"
+
+msgid "File exported"
+msgstr "Datei exportiert"
+
+msgid "Options"
+msgstr "Optionen"
 
 msgid "Progress viewer plugin help"
 msgstr "Schreibfortschritt-Plugin Hilfe"

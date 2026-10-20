@@ -3,6 +3,9 @@
 For further information see https://github.com/peter88213/nv_progress
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
+import os
+import sys
+
 from nv_progress import Plugin
 from nvlib.alternative_ui.simple_gui import SimpleGui
 from nvlib.configuration.configuration import Configuration
@@ -31,7 +34,10 @@ class ProgressTk(SimpleGui):
         self.nvService = NvServiceMock()
         self._YW_CLASS = NvWorkFile
         self.toolsMenu = NvMenu()
+        self.exportMenu = NvMenu()
+        self.exportMenu.add_command(label=_('Options'))
         self.mainMenu.add_cascade(label=_('Tools'), menu=self.toolsMenu)
+        self.mainMenu.add_cascade(label=_('Export'), menu=self.exportMenu)
         self.helpMenu = tk.Menu(self.mainMenu, tearoff=0)
         self.mainMenu.add_cascade(label=_('Help'), menu=self.helpMenu)
         self.plugin = Plugin()
@@ -61,5 +67,11 @@ class ProgressTk(SimpleGui):
 
 if __name__ == '__main__':
     ui = ProgressTk()
+    try:
+        sourcePath = sys.argv[1]
+    except:
+        sourcePath = ''
+    if sourcePath and os.path.isfile(sourcePath):
+        ui.open_project(filePath=sourcePath)
     ui.start()
 

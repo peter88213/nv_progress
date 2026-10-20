@@ -50,7 +50,17 @@ class Plugin(PluginBase):
             self.progressService.start_viewer(self.FEATURE)
 
         # Add an entry to the Tools menu.
+        pos = self._ui.exportMenu.index(_('Options'))
+        self._ui.exportMenu.insert_separator(pos)
         label = self.FEATURE
+        self._ui.exportMenu.insert_command(
+            pos,
+            label=label,
+            image=self._icon,
+            compound='left',
+            command=self.progressService.export_progress_log,
+        )
+        self._ui.exportMenu.disableOnClose.append(label)
         self._ui.toolsMenu.add_command(
             label=label,
             image=self._icon,

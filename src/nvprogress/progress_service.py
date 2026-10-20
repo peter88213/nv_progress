@@ -4,10 +4,12 @@ Copyright (c) Peter Triesberger
 For further information see https://github.com/peter88213/nv_progress
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
+import os
 from pathlib import Path
 
 from nvlib.controller.sub_controller import SubController
 from nvlib.gui.set_icon_tk import set_icon
+from nvprogress.csv_progress_log import CsvProgressLog
 from nvprogress.nvprogress_locale import _
 from nvprogress.progress_view import ProgressView
 
@@ -26,6 +28,7 @@ class ProgressService(SubController):
     OPTIONS = dict(
         force_logging=True,
     )
+    LOGFILE_CLASS = CsvProgressLog
 
     def __init__(self, model, view):
         self._mdl = model
@@ -99,5 +102,31 @@ class ProgressService(SubController):
         self.progressView.title(
             f'{self._mdl.novel.title} - {windowTitle}'
         )
+        self.progressView.bind('<<export_progress_log>>', self.export_progress_log)
         set_icon(self.progressView, icon='progress', default=False)
+
+    def export_progress_log(self, event=None):
+        if self._mdl.prjFile is None:
+            return
+
+        if self._mdl.prjFile.filePath is None:
+            return
+
+        self._ui.restore_status()
+
+        LogfilePath = (
+            f'{os.path.splitext(self._mdl.prjFile.filePath)[0]}'
+            f'_{self.LOGFILE_CLASS.SUFFIX}'
+            f'.{self.LOGFILE_CLASS.EXTENSION}'
+        )
+        progressLogfile = self.LOGFILE_CLASS(LogfilePath)
+        progressLogfile.wcLog = self._mdl.prjFile.wcLog
+        try:
+            progressLogfile.write()
+        except Exception as ex:
+            self._ui.set_status(f'!{str(ex)}')
+            return
+
+        self._ui.set_status(f'{_("File exported")}: {LogfilePath}')
+        return
 
