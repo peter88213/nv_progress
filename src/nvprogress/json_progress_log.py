@@ -22,5 +22,9 @@ class JsonProgressLog(File):
 
     def write(self):
         with open(self.filePath, 'w', encoding='utf-8') as f:
-            json.dump(self.wcLog, f, indent=4)
+            json.dump(
+                [(d, self.wcLog[d][0], self.wcLog[d][1]) for d in self.wcLog],
+                f,
+                indent=4,
+            )
 
