@@ -103,7 +103,10 @@ class ProgressService(SubController):
         self.progressView.title(
             f'{self._mdl.novel.title} - {windowTitle}'
         )
-        self.progressView.bind('<<export_progress_log>>', self.export_progress_log)
+        self.progressView.bind(
+            '<<export_progress_log>>',
+            self.export_progress_log
+        )
         set_icon(self.progressView, icon='progress', default=False)
 
     def export_progress_log(self, event=None):
