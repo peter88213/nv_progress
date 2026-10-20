@@ -117,7 +117,7 @@ class ProgressService(SubController):
         LogfilePath = (
             f'{os.path.splitext(self._mdl.prjFile.filePath)[0]}'
             f'_{self.LOGFILE_CLASS.SUFFIX}'
-            f'.{self.LOGFILE_CLASS.EXTENSION}'
+            f'{self.LOGFILE_CLASS.EXTENSION}'
         )
         progressLogfile = self.LOGFILE_CLASS(LogfilePath)
         progressLogfile.wcLog = self._mdl.prjFile.wcLog

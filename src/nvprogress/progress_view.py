@@ -4,15 +4,14 @@ Copyright (c) Peter Triesberger
 For further information see https://github.com/peter88213/nv_progress
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
+from datetime import date
 from tkinter import ttk
 
+from nvlib.controller.sub_controller import SubController
 from nvlib.gui.observer import Observer
 from nvprogress.nvprogress_locale import _
 from nvprogress.platform.platform_settings import KEYS
 from nvprogress.platform.platform_settings import PLATFORM
-from datetime import date
-
-from nvlib.controller.sub_controller import SubController
 import tkinter as tk
 
 
