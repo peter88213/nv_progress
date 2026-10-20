@@ -4,7 +4,6 @@ Copyright (c) Peter Triesberger
 For further information see https://github.com/peter88213/nv_progress
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
-from datetime import date
 import os
 from pathlib import Path
 
@@ -13,6 +12,7 @@ from nvlib.gui.set_icon_tk import set_icon
 from nvprogress.csv_progress_log import CsvProgressLog
 from nvprogress.nvprogress_locale import _
 from nvprogress.progress_view import ProgressView
+from nvprogress.wc_log_dict import WcLogDict
 
 
 class ProgressService(SubController):
@@ -121,39 +121,14 @@ class ProgressService(SubController):
             f'{self.LOGFILE_CLASS.EXTENSION}'
         )
         progressLogfile = self.LOGFILE_CLASS(LogfilePath)
-        progressLogfile.wcLog = self.get_wc_log()
+        progressLogfile.wcLog = WcLogDict()
+        progressLogfile.wcLog.update(self._mdl.prjFile)
         try:
             progressLogfile.write()
-        except ZeroDivisionError as ex:
+        except Exception as ex:
             self._ui.set_status(f'!{str(ex)}')
             return
 
         self._ui.set_status(f'{_("File exported")}: {LogfilePath}')
         return
-
-    def get_wc_log(self):
-        wcLog = {}
-
-        # Copy the read-in word count log.
-        lastTotals = None
-        for wcDate in self._mdl.prjFile.wcLog:
-            totals = self._mdl.prjFile.wcLog[wcDate]
-            if totals != lastTotals:
-                wcLog[wcDate] = totals
-                lastTotals = totals
-
-        # Add the word count determined when opening the project.
-        for wcDate in self._mdl.prjFile.wcLogUpdate:
-            totals = self._mdl.prjFile.wcLogUpdate[wcDate]
-            if totals != lastTotals:
-                wcLog[wcDate] = totals
-                lastTotals = totals
-
-        # Add the actual word count.
-        totals = list(self._mdl.prjFile.count_words())
-        if totals != lastTotals:
-            today = date.today().isoformat()
-            wcLog[today] = totals
-
-        return wcLog
 

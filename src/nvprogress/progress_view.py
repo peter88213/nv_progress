@@ -12,6 +12,7 @@ from nvlib.gui.observer import Observer
 from nvprogress.nvprogress_locale import _
 from nvprogress.platform.platform_settings import KEYS
 from nvprogress.platform.platform_settings import PLATFORM
+from nvprogress.wc_log_dict import WcLogDict
 import tkinter as tk
 
 
@@ -23,6 +24,7 @@ class ProgressView(tk.Toplevel, Observer, SubController):
     def __init__(self, model, prefs):
         tk.Toplevel.__init__(self)
         self._prefs = prefs
+        self._wcLogDict = WcLogDict()
 
         self.geometry(self._prefs['window_geometry'])
         self.minsize(self.MIN_WIDTH, self.MIN_HEIGHT)
@@ -133,51 +135,27 @@ class ProgressView(tk.Toplevel, Observer, SubController):
     def refresh(self):
         self._build_tree()
 
-    def _reset_tree(self):
-        # Clear the displayed tree.
-        for child in self.tree.get_children(''):
-            self.tree.delete(child)
-
     def _build_tree(self):
         self._reset_tree()
-        wcLog = {}
-
-        # Copy the read-in word count log.
-        for wcDate in self._mdl.prjFile.wcLog:
-            sessionDate = date.fromisoformat(wcDate).strftime('%x')
-            wcLog[sessionDate] = self._mdl.prjFile.wcLog[wcDate]
-
-        # Add the word count determined when opening the project.
-        for wcDate in self._mdl.prjFile.wcLogUpdate:
-            sessionDate = date.fromisoformat(wcDate).strftime('%x')
-            wcLog[sessionDate] = self._mdl.prjFile.wcLogUpdate[wcDate]
-
-        # Add the actual word count.
-        newCount, newTotalCount = self._mdl.prjFile.count_words()
-        today = date.today().strftime('%x')
-        wcLog[today] = [newCount, newTotalCount]
-
+        wcLog = self._get_wc_list()
         lastCount = 0
         lastTotalCount = 0
-        for wc in wcLog:
-            countDiffInt = wcLog[wc][0] - lastCount
-            totalCountDiffInt = wcLog[wc][1] - lastTotalCount
-            if countDiffInt == 0 and totalCountDiffInt == 0:
-                continue
-
+        for wcDate, count, totalCount in wcLog:
+            countDiffInt = count - lastCount
+            totalCountDiffInt = totalCount - lastTotalCount
             if countDiffInt > 0:
                 nodeTags = ('positive')
             else:
                 nodeTags = ('negative')
             columns = [
-                wc,
-                str(wcLog[wc][0]),
+                wcDate,
+                str(count),
                 str(countDiffInt),
-                str(wcLog[wc][1]),
+                str(totalCount),
                 str(totalCountDiffInt),
             ]
-            lastCount = wcLog[wc][0]
-            lastTotalCount = wcLog[wc][1]
+            lastCount = count
+            lastTotalCount = totalCount
             # startIndex = 'end'
             # chronological order
             startIndex = '0'
@@ -185,7 +163,7 @@ class ProgressView(tk.Toplevel, Observer, SubController):
             self.tree.insert(
                 '',
                 startIndex,
-                iid=wc,
+                iid=wcDate,
                 values=columns,
                 tags=nodeTags,
                 open=True,
@@ -198,3 +176,20 @@ class ProgressView(tk.Toplevel, Observer, SubController):
             root.event_generate(sequence)
 
         return callback
+
+    def _get_wc_list(self):
+        self._wcLogDict.update(self._mdl.prjFile)
+        return [
+            (
+                date.fromisoformat(d).strftime('%x'),
+                self._wcLogDict[d][0],
+                self._wcLogDict[d][1]
+            )
+            for d in self._wcLogDict
+        ]
+
+    def _reset_tree(self):
+        # Clear the displayed tree.
+        for child in self.tree.get_children(''):
+            self.tree.delete(child)
+
