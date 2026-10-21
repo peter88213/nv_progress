@@ -130,8 +130,6 @@ class ProgressService(SubController):
             progressLogfile.write()
         except Exception as ex:
             self._ui.set_status(f'!{str(ex)}')
-            return
-
-        self._ui.set_status(f'{_("File exported")}: {LogfilePath}')
-        return
+        else:
+            self._ui.set_status(f'{_("File exported")}: {LogfilePath}')
 
