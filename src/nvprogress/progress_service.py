@@ -8,12 +8,11 @@ from pathlib import Path
 
 from nvlib.controller.sub_controller import SubController
 from nvlib.gui.set_icon_tk import set_icon
-from nvprogress.log_exporter import LogExporter
 from nvprogress.nvprogress_locale import _
 from nvprogress.progress_view import ProgressView
 
 
-class ProgressService(SubController, LogExporter):
+class ProgressService(SubController):
     INI_FILENAME = 'progress.ini'
     INI_FILEPATH = '.novx/config'
     SETTINGS = dict(
@@ -102,7 +101,3 @@ class ProgressService(SubController, LogExporter):
         )
         set_icon(self.progressView, icon='progress', default=False)
 
-        self.progressView.bind(
-            '<<export_progress_log>>',
-            self.export_progress_log
-        )

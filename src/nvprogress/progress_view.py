@@ -23,14 +23,6 @@ class ProgressView(tk.Toplevel, Observer, SubController):
 
     def __init__(self, model, prefs):
 
-        def event(sequence):
-
-            def callback(*_):
-                root = self.winfo_toplevel()
-                root.event_generate(sequence)
-
-            return callback
-
         tk.Toplevel.__init__(self)
         self._prefs = prefs
         self._wcLogDict = WcLogDict()
@@ -105,13 +97,6 @@ class ProgressView(tk.Toplevel, Observer, SubController):
 
         self.tree.tag_configure('positive',)
         self.tree.tag_configure('negative', foreground='#ff0000')
-
-        # "Export log file" button.
-        ttk.Button(
-            self,
-            text=_('Export log file'),
-            command=event('<<export_progress_log>>'),
-        ).pack(side='left', padx=5, pady=5)
 
         # "Close" button.
         ttk.Button(
