@@ -3,8 +3,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.7.4\n"
-"POT-Creation-Date: 2026-10-20 12:42:44\n"
+"Project-Id-Version: 5.7.5\n"
+"POT-Creation-Date: 2026-10-30 19:03:49\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: LANGUAGE\n"
@@ -26,22 +26,7 @@ msgstr ""
 msgid "Daily progress log"
 msgstr ""
 
-msgid "Daily progress log file"
-msgstr ""
-
 msgid "Date"
-msgstr ""
-
-msgid "Export log file"
-msgstr ""
-
-msgid "File"
-msgstr ""
-
-msgid "File exported"
-msgstr ""
-
-msgid "Options"
 msgstr ""
 
 msgid "Progress viewer plugin help"

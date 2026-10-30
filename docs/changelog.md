@@ -5,6 +5,14 @@
 ## Changelog
 
 
+### Version 5.7.5
+
+- Prepared the implementation of the log file export feature (#2).
+
+API: 5.63
+Based on novelibre 5.66.9
+
+
 ### Version 5.7.4
 
 - Resizing the progress window is now limited.
