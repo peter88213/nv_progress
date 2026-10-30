@@ -8,7 +8,6 @@ from pathlib import Path
 
 from nvlib.controller.sub_controller import SubController
 from nvlib.gui.set_icon_tk import set_icon
-from nvprogress.csv_progress_log import CsvProgressLog
 from nvprogress.log_exporter import LogExporter
 from nvprogress.nvprogress_locale import _
 from nvprogress.progress_view import ProgressView
@@ -28,7 +27,6 @@ class ProgressService(SubController, LogExporter):
     OPTIONS = dict(
         force_logging=True,
     )
-    LOGFILE_CLASS = CsvProgressLog
 
     def __init__(self, model, view):
         self._mdl = model
